@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Home from "./Home";
+import Navbar from "./navBar";
+import Login from "./Login";
+import About from "./About";
+import Recipes from "./Recipes";
+import Signup from "./Signup";
+import MealPlanner from "./MealPlanner";
 
 function App() {
+  const path = window.location.pathname;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      {path === "/" && <Home />}
+      {path === "/login" && <Login />}
+      {path === "/signup" && <Signup />}
+      {path === "/About" && <About />}
+      {path === "/Recipes" && <Recipes />}
+      {path === "/MealPlanner" && <MealPlanner />}
+    </>
   );
 }
 
 export default App;
+

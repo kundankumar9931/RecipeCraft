@@ -1,0 +1,335 @@
+/* ---------------- GLOBAL LAYOUT ---------------- */
+.nutrition-planner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+}
+
+/* ---------------- HEADER ---------------- */
+.planner-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.planner-header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.planner-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* ---------------- WEEK CONTROLS ---------------- */
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.calendar-controls button {
+  background: #0077ff;
+  border: none;
+  padding: 7px 14px;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.calendar-controls button:hover {
+  background: #005fcc;
+}
+
+.calendar-controls span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ---------------- GRID LAYOUT ---------------- */
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+
+@media (max-width: 900px) {
+  .planner-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .planner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------------- DAY CARD ---------------- */
+.day-card {
+  border: 1px solid #e2e2e2;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+  transition: 0.2s;
+}
+
+.day-card:hover {
+  transform: scale(1.02);
+}
+
+.day-card h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.date {
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+  color: #777;
+}
+
+/* ---------------- MEAL SLOT ---------------- */
+.meal-slot {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.meal-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+  text-align: center;
+}
+
+.meal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.meal-buttons button {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  color: white;
+}
+
+.meal-buttons button:first-child {
+  background: #0077ff;
+}
+
+.meal-buttons button:first-child:hover {
+  background: #005fcc;
+}
+
+.meal-buttons button:last-child {
+  background: #0077ff;
+}
+
+.meal-buttons button:last-child:hover {
+  background: #005fcc;
+}
+
+/* ---------------- NUTRITION FOOTER ---------------- */
+.nutrition-box {
+  background: #f0f7ff;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.nutrition-box strong {
+  color: #0077ff;
+  font-size: 0.9rem;
+}
+
+.nutrition-box p {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+/* ---------------- SEARCH MODAL ---------------- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+}
+
+.detail-box {
+  background: white;
+  width: 100%;
+  max-width: 700px;
+  padding: 25px;
+  border-radius: 12px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: popup 0.2s ease-out;
+}
+
+/* ---------------- MODAL CLOSE BUTTON ---------------- */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: #aaa;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.close-btn:hover {
+  background: #888;
+}
+
+/* ---------------- SEARCH BAR ---------------- */
+.search-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-row button {
+  background: #00c851;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-row button:hover {
+  background: #009b40;
+}
+
+/* ---------------- RESULTS ---------------- */
+.meal-section {
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 12px;
+}
+
+.meal-section h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #0077ff;
+}
+
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  gap: 10px;
+}
+
+/* ---------------- RESULT CARD ---------------- */
+.meal-card {
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.meal-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+}
+
+.meal-card img {
+  width: 100%;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.meal-card strong {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.meal-card button {
+  width: 100%;
+  padding: 6px 8px;
+  background: #00c851;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.meal-card button:hover {
+  background: #009b40;
+}
+
+/* ---------------- SHOPPING LIST ---------------- */
+.summary-card {
+  margin-top: 30px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.summary-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.summary-card ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 0.9rem;
+}
+
+.empty {
+  color: #777;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------------- POP ANIMATION ---------------- */
+@keyframes popup {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
