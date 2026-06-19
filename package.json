@@ -1,4 +1,11 @@
 {
+  "name": "recipe-planner-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm install --prefix server && npm install --prefix my-app && npm run build --prefix my-app",
+    "start": "npm start --prefix server"
+  },
   "dependencies": {
     "react-router-dom": "^7.10.1"
   }

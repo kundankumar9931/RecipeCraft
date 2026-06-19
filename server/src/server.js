@@ -139,6 +139,23 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Serve static assets in production
+if (config.nodeEnv === 'production') {
+  const path = require('path');
+  app.use(express.static(path.join(__dirname, '../../my-app/build')));
+
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(path.resolve(__dirname, '../../', 'my-app', 'build', 'index.html'));
+    } else {
+      res.status(404).json({
+        success: false,
+        message: 'API Route not found',
+      });
+    }
+  });
+}
+
 // Error handling middleware
 app.use(errorHandler);
 
